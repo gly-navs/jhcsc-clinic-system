@@ -1,0 +1,20 @@
+# Sensitive files
+config.php
+.env
+*.env
+
+# Dependencies
+vendor/
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# XAMPP files
+htdocs/
+tmp/

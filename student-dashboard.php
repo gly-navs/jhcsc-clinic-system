@@ -75,8 +75,13 @@
                     <p><strong>Year Level:</strong> <span id="profile-year"></span></p>
                     <p><strong>Email:</strong> <span id="profile-email"></span></p>
                     <p><strong>Contact Number:</strong> <span id="profile-number"></span></p>
+                    <!-- Health Information -->
+                    <p><strong>Weight:</strong> <span id="profile-weight">Not set</span></p>
+                    <p><strong>Height:</strong> <span id="profile-height">Not set</span></p>
+                    <p><strong>Blood Type:</strong> <span id="profile-bloodtype">Not set</span></p>
                 </div>
                 <button id="edit-profile-btn">Edit Profile</button>
+                <div id="profile-message" style="margin-top: 10px;"></div>
             </div>
 
             <!-- EVENTS SECTION -->
@@ -93,6 +98,7 @@
                 </div>
                 <div class="events-list"></div>
             </div>
+
             <!-- RESERVATIONS SECTION -->
             <div id="reservations" class="content-section">
                 <h2>My Reservations</h2>

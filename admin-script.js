@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return await response.json();
     } catch (error) {
       console.error('API Error:', error);
-      return { success: false, message: 'Network error occurred' };
+      return { success: false, 'message': 'Network error occurred' };
     }
   }
 
@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
         console.error('Error sending notification:', error);
         alert("❌ Error sending email notification. Please check your internet connection and try again.");
-    } finally {
+    } finally {``
         // Restore button state
         sendBtn.innerHTML = originalText;
         sendBtn.disabled = false;

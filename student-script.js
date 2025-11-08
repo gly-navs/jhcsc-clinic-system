@@ -569,6 +569,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("profile-year").textContent = currentStudent.year;
     document.getElementById("profile-email").textContent = currentStudent.email;
     document.getElementById("profile-number").textContent = currentStudent.phone;
+    
+    // Load health information
+    document.getElementById("profile-weight").textContent = currentStudent.weight || "Not set";
+    document.getElementById("profile-height").textContent = currentStudent.height || "Not set";
+    document.getElementById("profile-bloodtype").textContent = currentStudent.bloodtype || "Not set";
   }
 
   const editProfileBtn = document.getElementById("edit-profile-btn");
@@ -585,6 +590,22 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Year Level:</strong> <input type="text" id="edit-year" value="${currentStudent.year}"></p>
         <p><strong>Email:</strong> <input type="email" id="edit-email" value="${currentStudent.email}"></p>
         <p><strong>Contact Number:</strong> <input type="text" id="edit-number" value="${currentStudent.phone}"></p>
+        <!-- Health Information Inputs -->
+        <p><strong>Weight (kg):</strong> <input type="number" id="edit-weight" value="${currentStudent.weight || ''}" placeholder="Enter weight in kg" min="30" max="200"></p>
+        <p><strong>Height (cm):</strong> <input type="number" id="edit-height" value="${currentStudent.height || ''}" placeholder="Enter height in cm" min="100" max="250"></p>
+        <p><strong>Blood Type:</strong> 
+          <select id="edit-bloodtype">
+            <option value="">Select Blood Type</option>
+            <option value="A+" ${currentStudent.bloodtype === 'A+' ? 'selected' : ''}>A+</option>
+            <option value="A-" ${currentStudent.bloodtype === 'A-' ? 'selected' : ''}>A-</option>
+            <option value="B+" ${currentStudent.bloodtype === 'B+' ? 'selected' : ''}>B+</option>
+            <option value="B-" ${currentStudent.bloodtype === 'B-' ? 'selected' : ''}>B-</option>
+            <option value="AB+" ${currentStudent.bloodtype === 'AB+' ? 'selected' : ''}>AB+</option>
+            <option value="AB-" ${currentStudent.bloodtype === 'AB-' ? 'selected' : ''}>AB-</option>
+            <option value="O+" ${currentStudent.bloodtype === 'O+' ? 'selected' : ''}>O+</option>
+            <option value="O-" ${currentStudent.bloodtype === 'O-' ? 'selected' : ''}>O-</option>
+          </select>
+        </p>
       `;
       btn.textContent = "Save Profile";
     } else {
@@ -597,7 +618,10 @@ document.addEventListener("DOMContentLoaded", function () {
         block: document.getElementById("edit-block").value,
         year: document.getElementById("edit-year").value,
         email: document.getElementById("edit-email").value,
-        phone: document.getElementById("edit-number").value
+        phone: document.getElementById("edit-number").value,
+        weight: document.getElementById("edit-weight").value,
+        height: document.getElementById("edit-height").value,
+        bloodtype: document.getElementById("edit-bloodtype").value
       };
 
       sessionStorage.setItem('currentStudent', JSON.stringify(updatedProfile));
@@ -610,6 +634,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Year Level:</strong> <span id="profile-year">${updatedProfile.year}</span></p>
         <p><strong>Email:</strong> <span id="profile-email">${updatedProfile.email}</span></p>
         <p><strong>Contact Number:</strong> <span id="profile-number">${updatedProfile.phone}</span></p>
+        <!-- Health Information Display -->
+        <p><strong>Weight:</strong> <span id="profile-weight">${updatedProfile.weight || "Not set"}</span></p>
+        <p><strong>Height:</strong> <span id="profile-height">${updatedProfile.height || "Not set"}</span></p>
+        <p><strong>Blood Type:</strong> <span id="profile-bloodtype">${updatedProfile.bloodtype || "Not set"}</span></p>
       `;
       btn.textContent = "Edit Profile";
       

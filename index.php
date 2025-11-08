@@ -13,7 +13,7 @@
 <body>
   <!-- Loading Screen -->
   <div class="loading-screen" id="loadingScreen">
-      <div class="loader-container">
+      <div class="loader-container">  
           <div class="animated-logo">
               <img src="jhlogo.png" alt="JHCSC Logo" />
           </div>

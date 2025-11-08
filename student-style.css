@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -605,7 +604,8 @@ h2::after {
     color: var(--primary-dark);
 }
 
-#profile-info input {
+#profile-info input,
+#profile-info select {
     padding: 6px 10px;
     width: calc(100% - 130px);
     border: 2px solid #eaeaea;
@@ -615,11 +615,17 @@ h2::after {
     background: var(--light-bg);
 }
 
-#profile-info input:focus {
+#profile-info input:focus,
+#profile-info select:focus {
     border-color: var(--primary);
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 127, 55, 0.1);
     background: var(--white);
+}
+
+#profile-info select {
+    width: calc(100% - 130px);
+    cursor: pointer;
 }
 
 #edit-profile-btn {
@@ -646,6 +652,16 @@ h2::after {
 
 #edit-profile-btn:active {
     transform: translateY(1px);
+}
+
+/* Health Information Styling */
+#profile-info p:nth-child(8),
+#profile-info p:nth-child(9),
+#profile-info p:nth-child(10) {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary);
 }
 
 /* ====== MODALS ====== */
